@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>برای آیسان، عشق من</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            margin: 0;
+            padding: 0;
+            color: #5e1d5b;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-top: 50px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .heart {
+            font-size: 60px;
+            cursor: pointer;
+            animation: heartbeat 1.5s infinite;
+            margin: 20px 0;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .reason-card {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 15px;
+            margin: 15px auto;
+            max-width: 500px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .reason-card:hover {
+            transform: translateY(-5px);
+        }
+        button {
+            background-color: #d23669;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #a71e4d;
+        }
+        .hidden-message {
+            display: none;
+            font-size: 1.2em;
+            margin: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+        }
+        #love-timer {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .game-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+        }
+        #game-score {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lv </title>
+    <style>
+        /* استایل Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+            transition: opacity 1s ease-out;
+        }
+        #heart-loader {
+            font-size: 100px;
+            color: #ff0000;
+            animation: heartbeat 1.5s infinite, glow 2s infinite;
+            cursor: pointer;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.3); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px #ff0000; }
+            50% { text-shadow: 0 0 30px #ff0000; }
+            100% { text-shadow: 0 0 10px #ff0000; }
+        }
+        #loading-text {
+            color: #fff;
+            margin-top: 20px;
+            font-size: 20px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="heart-loader" onclick="skipPreloader()">❤️</div>
+        <div id="loading-text">در حال بارگذاری ...</div>
+    </div>
+
+    <!-- محتوای اصلی سایت (همان کدهای قبلی شما) -->
+    <div class="container" style="display:none;" id="main-content">
+        <!-- محتوای قبلی اینجا قرار می‌گیرد -->
+    </div>
+
+    <script>
+        // مخفی کردن Preloader پس از 3 ثانیه یا با کلیک
+        function skipPreloader() {
+            document.getElementById('preloader').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('preloader').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+            }, 1000);
+        }
+
+        // به طور خودکار پس از 3 ثانیه Preloader را مخفی کن
+        setTimeout(skipPreloader, 3000);
+    </script>
+
+    <!-- اینجا کدهای قبلی سایت شما کپی می‌شود -->
+</body>
+</html>
+    <div class="container">
+        <!-- 1. صفحه اصلی با انیمیشن قلب -->
+        <h1>فدای چشمات بشم من ❤️</h1>
+        <div class="heart" onclick="floatHearts()">❤️</div>
+        <p>روی قلب بالا کلیک کن !</p>
+        <div id="hearts-container"></div>
+
+        <!-- 3. لیست "چرا دوستت دارم" -->
+        <h2>چرا دوست دارم؟ تمام دلایلش این پایینه</h2>
+        <div id="reasons-slider">
+            <div class="reason-card">۱. چون نگاه تو آرامش بخش ترین جای دنیاست...</div>
+            <div class="reason-card">۲. چون تنها کسی هستی که صدام رو حتی تو سکوت می‌شنوی</div>
+            <div class="reason-card">۳. چون با وجودت زندگی من رنگ خوشبختی گرفت</div>
+            <button onclick="showNextReason()">دلیل بعدی</button>
+        </div>
+
+        <!-- 4. پیام رمزی -->
+        <h2>راز امروز</h2>
+        <button onclick="showSecretMessage()">کلیک کن</button>
+        <div id="secret-message" class="hidden-message"></div>
+
+        <!-- 5. کاوترلذت -->
+        <h2>بازی عشق</h2>
+        <div class="game-container">
+            <p>تا می‌تونی روی قلب کلیک کن!</p>
+            <div class="heart" onclick="addToScore()">❤️</div>
+            <p id="game-score">امتیاز: 0</p>
+        </div>
+
+        <!-- 6. تایمر عشق -->
+        <h2>از وقتی روی ماهتو دیدم دقیقا... </h2>
+        <div id="love-timer"></div>
+
+        <!-- 7. صفحه اختصاصی "فقط برای تو" -->
+        <h2>نامه رو باز کنم عزیزم:)))</h2>
+        <div class="hidden-message" id="personal-message">
+            <p>آیسان جان،</p>
+            <p>امروز صبح که بیدار شدم، اولین فکرم تو بودی...</p>
+            <p>می‌دونی چقدر بهت فکر می‌کنم؟ هر ثانیه‌ای که می‌گذره، بیشتر از قبل.</p>
+            <p>همیشه تو قلبم هستی، عشق من.</p>
+            <p>همیشه تو قلبمی دور سرت بگردمممم</p>
+        </div>
+        <button onclick="showPersonalMessage()">نامه رو باز کن</button>
+    </div>
+
+    <script>
+        // 1. انیمیشن قلب‌ها
+        function floatHearts() {
+            const container = document.getElementById('hearts-container');
+            container.innerHTML = '';
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '❤️';
+                heart.style.position = 'absolute';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animation = `float-up ${Math.random() * 2 + 1}s linear forwards`;
+                heart.style.fontSize = `${Math.random() * 20 + 10}px`;
+                container.appendChild(heart);
+            }
+            
+            // اضافه کردن استایل انیمیشن
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes float-up {
+                    to {
+                        transform: translateY(-100vh) rotate(360deg);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            alert('عشق من خیلییییی دوستت دارم!');
+        }
+
+        // 3. اسلایدر دلایل
+        let currentReason = 0;
+        const reasons = [
+            
+            "۵. چون با تو بودن یعنی نفس کشیدن",
+            "۶. چون حتی تو خیابونم که راه میری، دنیا برام قشنگ‌تر میشه",
+            "۷. چون تو قوی‌ترین و در عین حال نازترین آدمی هستی که می‌شناسم"
+        ];
+        
+        function showNextReason() {
+            const slider = document.getElementById('reasons-slider');
+            const cards = slider.getElementsByClassName('reason-card');
+            
+            if (currentReason < reasons.length) {
+                const newCard = document.createElement('div');
+                newCard.className = 'reason-card';
+                newCard.textContent = reasons[currentReason];
+                slider.insertBefore(newCard, cards[cards.length - 1]);
+                currentReason++;
+            } else {
+                alert('قربون دستات برم من منتظر تموم شدنشون نباش چون دلایل دوست داشتنت بینهایته قربون چشمات بشم!!');
+            }
+        }
+
+        // 4. پیام رمزی
+        const secretMessages = [
+            "امروز دوباره عاشقت شدم...",
+            "تو قشنگترین دختر دنیایی!",
+            "یه روزی میرسه که باهم یه خونه پر از عشق بسازیم",
+            "دوست دارم دستاتو بگیرم و تا آخر عمر نگه دارم",
+            "تو دلیل لبخند منی",
+            "هر روز با تو یه روز خاصه",
+            "عشق من، تویی که همیشه تو قلبمی",
+            "با تو بودن یعنی زندگی کردن",
+            ":)))دوست دارم دستات همیشه تو دستام باشه"
+        ];
+        
+        function showSecretMessage() {
+            const randomMessage = secretMessages[Math.floor(Math.random() * secretMessages.length)];
+            document.getElementById('secret-message').textContent = randomMessage;
+            document.getElementById('secret-message').style.display = 'block';
+        }
+
+        // 5. بازی کلیک روی قلب
+        let score = 0;
+        function addToScore() {
+            score++;
+            document.getElementById('game-score').textContent = `امتیاز: ${score}`;
+            
+            if (score % 10 === 0) {
+                alert(`آفرین آیسان جان! رسیدی به ${score} امتیاز! فداتشم!`);
+            }
+        }
+
+        // 6. تایمر عشق (مثال: از 1 فروردین 1403)
+        function updateLoveTimer() {
+            const startDate = new Date(2022,9,1); // 1 فروردین 1403
+            const now = new Date();
+            const diff = now - startDate;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            
+            document.getElementById('love-timer').innerHTML = `
+                ${days} روز و ${hours} ساعت از اون لحظه گذشت!
+                <br>و هر ثانیه بیشتر از قبل دوستت دارم...
+            `;
+        }
+        
+        // به روز رسانی هر ثانیه
+        setInterval(updateLoveTimer, 1000);
+        updateLoveTimer();
+
+        // 7. پیام شخصی
+        function showPersonalMessage() {
+            document.getElementById('personal-message').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
